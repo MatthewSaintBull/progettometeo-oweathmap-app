@@ -17,6 +17,7 @@ export const weatherSlice = createSlice({
 export const { addCity } = weatherSlice.actions
 
 export const addCityWeather = (cityId, renderLocation) => (dispatch) => {
+    const count = 4
     const getTimefromTimezone = (timezone) => {
         const utc = moment().utc()
         const cityTime = moment(utc).add(timezone, 'seconds')
@@ -33,7 +34,7 @@ export const addCityWeather = (cityId, renderLocation) => (dispatch) => {
         )
         return tempsArray
     }
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?id=${cityId}&units=metric&cnt=4&appid=${process.env.REACT_APP_APIKEY}`).then(response => response.json()).then(
+    fetch(`${process.env.REACT_APP_APIURL}${cityId}&units=metric&cnt=${count}&appid=${process.env.REACT_APP_APIKEY}`).then(response => response.json()).then(
         data => {
             dispatch(addCity({
                 cityBody: { name: data.city.name, temperature: getTempsfromList(data.list), time: getTimefromTimezone(data.city.timezone), weather: data.list[0].weather[0].main, date: moment().format('dddd DD, MMM') },

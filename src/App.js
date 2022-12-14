@@ -26,20 +26,20 @@ function App() {
         <div className='flex flex-col-reverse md:flex-col'>
           <SummaryComponent />
           <div className='w-32 md:absolute flex md:flex-col rounded-r-xl overflow-hidden bg-blue-300 z-50 -ml-4 md:ml-0 shadow-xl inset-x-0 md:h-24 md:my-36 my-5 h-16 items-center justify-center'>
-           {
-            mainCity.temperature ? <span className='text-5xl font-bold text-white'>{mainCity.temperature[0].temp}°</span>
-            : null
-          }
-           <span className='text-2xl text-white'><WeatherIcon /></span>
+            {
+              mainCity.temperature ? <span className='text-5xl font-bold text-white'>{mainCity.temperature[0].temp}°</span>
+                : null
+            }
+            <span className='text-2xl text-white'><WeatherIcon /></span>
           </div>
         </div>
         <div className='h-full md:h-96 md:overflow-y-auto'>
           <CitiesMenuComponent />
         </div>
       </div>
-      <div className='flex justify-center flex-wrap md:flex-nowrap space-x-5'>
-      <ThermometerComponent />
-      <MultiTabInfoComponent />
+      <div className='flex justify-center flex-wrap md:flex-nowrap md:space-x-5'>
+        <ThermometerComponent />
+        <MultiTabInfoComponent />
       </div>
     </div>
   );

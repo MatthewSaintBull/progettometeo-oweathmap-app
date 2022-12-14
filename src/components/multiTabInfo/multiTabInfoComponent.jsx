@@ -50,10 +50,10 @@ const MultiTabInfoComponent = () => {
     return (
         <div className="flex flex-col w-full mt-4">
             <div className="flex ">
-                <button onClick={() => { setTabOpened(1) }} className={`h-20 w-40 bg-${tabOpened === 1 ? "blue-300" : "white"} rounded-t-xl shadow-2xl z-50 shadow-slate-700 text-${tabOpened === 1 ? "white" : "blue-900"} text-center text-2xl font-bold `}>
+                <button onClick={() => { setTabOpened(1) }} className={`h-20 w-40 bg-${tabOpened === 1 ? "blue-300" : "white"} rounded-t-xl shadow-2xl  shadow-slate-700 text-${tabOpened === 1 ? "white" : "blue-900"} text-center text-2xl font-bold z-50`}>
                     This Week
                 </button>
-                <button onClick={() => { setTabOpened(2) }} className={`h-20 w-40 bg-${tabOpened === 2 ? "blue-300" : "white"} rounded-t-xl shadow-2xl z-50 shadow-slate-700 text-${tabOpened === 2 ? "white" : "blue-900"} text-center text-2xl font-bold`}>
+                <button onClick={() => { setTabOpened(2) }} className={`h-20 w-40 bg-${tabOpened === 2 ? "blue-300" : "white"} rounded-t-xl shadow-2xl  shadow-slate-700 text-${tabOpened === 2 ? "white" : "blue-900"} text-center text-2xl font-bold z-50`}>
                     This Month
                 </button>
             </div>
